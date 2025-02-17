@@ -63,17 +63,15 @@
   <figcaption style="text-align:center;">
     </font>
     <font size=3>
-      Fig.1 The architecture of BiVocoder and discriminators are omitted in the diagram. ABS(·) and Angle(·) denote amplitude and
-      phase spectrum calculations. Arctan2 stands for two-arguement arc-tan function. Conv1d and DeConv1d represents 1D convolutional
-      layer and 1D deconvolutional layer, respectively.
+      Fig.1 Overview of the proposed FreeGAN vocoder
     </font>
   </figcaption><br><br>
   </p>
 </div>
 
-<strong> “*” indicates that the used features have the same frame shift and dimensionality as those extracted by BiVocoder. </strong>
 
-<a name="2"><h2>Analysis-synthesis tasks on different models</h2></a>
+
+<a name="2"><h2>Is GAN Necessary for the FreeGAN vocoder?</h2></a>
 
 <p>
 </p>
@@ -82,17 +80,18 @@
   <thead>
     <tr>
       <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>APNet</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-
+      <th style="text-align: center"><strong>FreeGAN (proposed)</strong></th>
+      <th style="text-align: center"><strong>FreeGAN w/o Prior</strong></th>
+      <th style="text-align: center"><strong>FreeGAN w/o SNAKE</strong></th>
+      <th style="text-align: center"><strong>FreeGAN w/o FWAWP</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/GT/p360_153.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi/p360_153.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./A/A_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./E/E_01.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./wavs/ana/apnet/p360_153.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p229-072.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./wavs/ana/autovocoder/p360_153.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
@@ -101,741 +100,85 @@
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>APNet*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder*</strong></th>
-      <th style="text-align: center"><strong>STRAIGHT</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/proposed/p360_153.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi_32/p360_153.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet32/p360_153.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder32/p360_153.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/straight/p360_153.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-
-<h3>Sample 2</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
       <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>APNet</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-
+      <th style="text-align: center"><strong>BigVGAN</strong></th>
+      <th style="text-align: center"><strong>iSTFTNet</strong></th>
+      <th style="text-align: center"><strong>Vocos</strong></th>
+      <th style="text-align: center"><strong>APNet2</strong></th>
+      <th style="text-align: center"><strong>FreeV</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/GT/p360_154.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi/p360_154.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet/p360_154.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder/p360_154.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>APNet*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder*</strong></th>
-      <th style="text-align: center"><strong>STRAIGHT</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/proposed/p360_154.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi_32/p360_154.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet32/p360_154.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder32/p360_154.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/straight/p360_154.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/A/A_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./B/B_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./C/C_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/I/I_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./D/D_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/E/E_01.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
 <br>
 <br>
 
-<h3>Sample 3</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>APNet</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/GT/p361_161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi/p361_161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet/p361_161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder/p361_161.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>APNet*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder*</strong></th>
-      <th style="text-align: center"><strong>STRAIGHT</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/proposed/p361_161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi_32/p361_161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet32/p361_161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder32/p361_161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/straight/p361_161.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 4</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>APNet</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/GT/p361_162.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi/p361_162.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet/p361_162.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder/p361_162.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>APNet*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder*</strong></th>
-      <th style="text-align: center"><strong>STRAIGHT</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/proposed/p361_162.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi_32/p361_162.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet32/p361_162.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder32/p361_162.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/straight/p361_162.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 5</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>APNet</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/GT/p362_216.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi/p362_216.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet/p362_216.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder/p362_216.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>APNet*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder*</strong></th>
-      <th style="text-align: center"><strong>STRAIGHT</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/proposed/p362_216.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi_32/p362_216.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet32/p362_216.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder32/p362_216.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/straight/p362_216.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 6</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>APNet</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/GT/p362_222.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi/p362_222.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet/p362_222.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder/p362_222.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>APNet*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder*</strong></th>
-      <th style="text-align: center"><strong>STRAIGHT</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/proposed/p362_222.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi_32/p362_222.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet32/p362_222.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder32/p362_222.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/straight/p362_222.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 7</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>APNet</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/GT/p363_389.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi/p363_389.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet/p363_389.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder/p363_389.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>APNet*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder*</strong></th>
-      <th style="text-align: center"><strong>STRAIGHT</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/ana/proposed/p363_389.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/hifi_32/p363_389.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/apnet32/p363_389.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/autovocoder32/p363_389.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/ana/straight/p363_389.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-
-<a name="3"><h2>Text-to-speech tasks on different models</h2></a>
+<strong> w/o GAN: GAN-free versions.
+  <br>
+  * w/o GAN: GAN-free versions with our proposed
+  improvement strategies. </strong>
+<a name="3"><h2>GAN is Necessary for Which Types of Vocoders?</h2></a>
 <h3>Sample 1</h3>
 <table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
       <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN w/o GAN</strong></th>
+      <th style="text-align: center"><strong>HiFi-GAN* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>iSTFTNet</strong></th>
+      <th style="text-align: center"><strong>iSTFTNet w/o GAN</strong></th>
+      <th style="text-align: center"><strong>iSTFTNet* w/o GAN</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./wavs/TTS/GT/p229_072.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/A/A_01.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./wavs/TTS/proposed/p229-072.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi/p229-072.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi_32/p229-072.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/B/B_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/J/J_01.wav" controls="" preload=""></audio></td>
       <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p229-072.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/H/H_01.wav" controls="" preload=""></audio></td>
   </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 2</h3>
-<table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
+      <th style="text-align: center"><strong>Vocos</strong></th>
+      <th style="text-align: center"><strong>Vocos w/o GAN</strong></th>
+      <th style="text-align: center"><strong>Vocos* w/o GAN</strong></th>
+      <th style="text-align: center"><strong>APNet2</strong></th>
+      <th style="text-align: center"><strong>APNet2 w/o GAN</strong></th>
+      <th style="text-align: center"><strong>APNet2* w/o GAN</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./wavs/TTS/GT/p229_161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/proposed/p229-161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi/p229-161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi_32/p229-161.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p229-161.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/I/I_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./wavs/TTS/proposed/p229-072.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/J/J_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/C/C_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p229-072.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/D/D_01.wav" controls="" preload=""></audio></td>
   </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 3</h3>
-<table>
   <thead>
     <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
+      <th style="text-align: center"><strong>FreeV</strong></th>
+      <th style="text-align: center"><strong>FreeV w/o GAN</strong></th>
+      <th style="text-align: center"><strong>FreeV* w/o GAN</strong></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left"><audio src="./wavs/TTS/GT/p237_196.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/proposed/p237-196.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi/p237-196.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi_32/p237-196.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p237-196.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/E/E_01.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./wavs/TTS/proposed/p229-072.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="./abx/F/F_01.wav" controls="" preload=""></audio></td>
   </tbody>
 </table>
 <br>
 <br>
-<h3>Sample 4</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/TTS/GT/p240_164.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/proposed/p240-164.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi/p240-164.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi_32/p240-164.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p240-164.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 5</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/TTS/GT/p246_020.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/proposed/p246-020.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi/p246-020.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi_32/p246-020.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p246-020.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 6</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/TTS/GT//p246_290.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/proposed/p246-290.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi/p246-290.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi_32/p246-290.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p246-290.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<h3>Sample 7</h3>
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"><strong>Groud Truth</strong></th>
-      <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-      <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-      <th style="text-align: center"><strong>Autovocoder</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left"><audio src="./wavs/TTS/GT/p251_303.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/proposed/p251-303.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi/p251-303.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+hifi_32/p251-303.wav" controls="" preload=""></audio></td>
-      <td style="text-align: left"><audio src="./wavs/TTS/diff+auto/p251-303.wav" controls="" preload=""></audio></td>
-  </tbody>
-</table>
-<br>
-<br>
-<a name="4"><h2>Cross-dataset experiments</h2></a>
-<p>
-    </p>
-    <h3>Sample 1</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>Groud Truth</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-          <th style="text-align: center"><strong>APNet</strong></th>
-          <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/GT/LJ001-0063.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi/LJ001-0063.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet/LJ001-0063.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder/LJ001-0063.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-          <th style="text-align: center"><strong>APNet*</strong></th>
-          <th style="text-align: center"><strong>Autovocoder*</strong></th>
-          <th style="text-align: center"><strong>STRAIGHT</strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/proposed/LJ001-0063.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi_32/LJ001-0063.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet32/LJ001-0063.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder32/LJ001-0063.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/straight/LJ001-0063.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-
-    <p>
-    </p>
-    <h3>Sample 2</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>Groud Truth</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-          <th style="text-align: center"><strong>APNet</strong></th>
-          <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/GT/LJ001-0072.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi/LJ001-0072.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet/LJ001-0072.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder/LJ001-0072.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-          <th style="text-align: center"><strong>APNet*</strong></th>
-          <th style="text-align: center"><strong>Autovocoder*</strong></th>
-          <th style="text-align: center"><strong>STRAIGHT</strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/proposed/LJ001-0072.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi_32/LJ001-0072.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet32/LJ001-0072.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder32/LJ001-0072.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/straight/LJ001-0072.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <p>
-    </p>
-    <h3>Sample 3</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>Groud Truth</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-          <th style="text-align: center"><strong>APNet</strong></th>
-          <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/GT/LJ001-0086.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi/LJ001-0086.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet/LJ001-0086.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder/LJ001-0086.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-          <th style="text-align: center"><strong>APNet*</strong></th>
-          <th style="text-align: center"><strong>Autovocoder*</strong></th>
-          <th style="text-align: center"><strong>STRAIGHT</strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/proposed/LJ001-0086.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi_32/LJ001-0086.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet32/LJ001-0086.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder32/LJ001-0086.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/straight/LJ001-0086.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <p>
-    </p>
-    <h3>Sample 4</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>Groud Truth</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-          <th style="text-align: center"><strong>APNet</strong></th>
-          <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/GT/LJ002-0224.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi/LJ002-0224.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet/LJ002-0224.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder/LJ002-0224.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-          <th style="text-align: center"><strong>APNet*</strong></th>
-          <th style="text-align: center"><strong>Autovocoder*</strong></th>
-          <th style="text-align: center"><strong>STRAIGHT</strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/proposed/LJ002-0224.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi_32/LJ002-0224.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet32/LJ002-0224.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder32/LJ002-0224.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/straight/LJ002-0224.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <p>
-    </p>
-    <h3>Sample 5</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>Groud Truth</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-          <th style="text-align: center"><strong>APNet</strong></th>
-          <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/GT/LJ002-0247.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi/LJ002-0247.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet/LJ002-0247.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder/LJ002-0247.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-          <th style="text-align: center"><strong>APNet*</strong></th>
-          <th style="text-align: center"><strong>Autovocoder*</strong></th>
-          <th style="text-align: center"><strong>STRAIGHT</strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/proposed/LJ002-0247.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi_32/LJ002-0247.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet32/LJ002-0247.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder32/LJ002-0247.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/straight/LJ002-0247.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <p>
-    </p>
-    <h3>Sample 6</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>Groud Truth</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-          <th style="text-align: center"><strong>APNet</strong></th>
-          <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/GT/LJ003-0287.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi/LJ003-0287.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet/LJ003-0287.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder/LJ003-0287.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-          <th style="text-align: center"><strong>APNet*</strong></th>
-          <th style="text-align: center"><strong>Autovocoder*</strong></th>
-          <th style="text-align: center"><strong>STRAIGHT</strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/proposed/LJ003-0287.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi_32/LJ003-0287.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet32/LJ003-0287.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder32/LJ003-0287.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/straight/LJ003-0287.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <p>
-    </p>
-    <h3>Sample 7</h3>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>Groud Truth</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN</strong></th>
-          <th style="text-align: center"><strong>APNet</strong></th>
-          <th style="text-align: center"><strong>Autovocoder</strong></th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/GT/LJ004-0008.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi/LJ004-0008.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet/LJ004-0008.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder/LJ004-0008.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
-    <table>
-      <thead>
-        <tr>
-          <th style="text-align: center"><strong>BiVocoder (proposed)</strong></th>
-          <th style="text-align: center"><strong>HiFi-GAN*</strong></th>
-          <th style="text-align: center"><strong>APNet*</strong></th>
-          <th style="text-align: center"><strong>Autovocoder*</strong></th>
-          <th style="text-align: center"><strong>STRAIGHT</strong></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/proposed/LJ004-0008.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/hifi_32/LJ004-0008.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/apnet32/LJ004-0008.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/autovocoder32/LJ004-0008.wav" controls="" preload=""></audio></td>
-          <td style="text-align: left"><audio src="./wavs/LJSpeech/straight/LJ004-0008.wav" controls="" preload=""></audio></td>
-      </tbody>
-    </table>
-    <br>
-    <br>
