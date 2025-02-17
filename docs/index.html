@@ -4,9 +4,9 @@
    
 
 <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>BiVocoder</title>
+<title>FreeGAN</title>
 <meta name="generator" content="Jekyll v3.9.0">
-<meta property="og:title" content="BiVocoder">
+<meta property="og:title" content="FreeGAN">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://mkd-mkd.github.io/icassp2024/">
 <meta property="og:url" content="https://mkd-mkd.github.io/icassp2024/">
@@ -26,10 +26,10 @@
     </section>
 
     <section class="main-content">
-      <h1 id=""><center>BiVocoder: A Bidirectional Neural Vocoder Integrating Feature Extraction and Waveform Generation </center></h1>
+      <h1 id=""><center>Is GAN Necessary for Mel-Spectrogram-based Neural Vocoder? </center></h1>
       <!-- <h1 id=""><center> Evaluation </center></h1> -->
       
-<center>Anonymous submission to Interspeech 2024 </center>
+<center>Anonymous submission to Interspeech 2025 </center>
 <!--<center> Hui-peng Du, Ye-Xin Lu, Yang Ai, Zhen-hua Ling</center>
 <br>
 <center> National Engineering Research Center of Speech and Language Information Processing,</center>
@@ -37,18 +37,19 @@
 
 
 <h2 id="abstract">Abstract</h2>
-<p>This paper proposes a novel bidirectional neural vocoder, named BiVocoder, capable both of feature extraction and reverse waveform generation within the short-time Fourier transform (STFT) domain. 
-  For feature extraction, the BiVocoder takes amplitude and phase spectra derived from STFT as inputs, transforms them into long-frame-shift and low-dimensional features through convolutional neural networks. 
-  The extracted features are demonstrated suitable for direct prediction by acoustic models, supporting its application in text-to-speech (TTS) task.  
-  For waveform generation, the BiVocoder restores amplitude and phase spectra from the features by a symmetric network, followed by inverse STFT to reconstruct the speech waveform. Experimental results show that our proposed BiVocoder achieves better performance compared to some baseline vocoders, by comprehensively considering both synthesized speech quality and inference speed for both analysis-synthesis and TTS tasks. </p>
+<p>Recently, mainstream mel-spectrogram-based neural vocoders, such as HiFi-GAN and BigVGAN, rely on generative adversarial networks (GANs) for high-fidelity speech generation.
+  However, the use of GANs can restrict training efficiency and model complexity. 
+  Therefore, this paper proposes FreeGAN, a novel vocoder designed to investigate whether GANs are truly necessary for mel-spectrogram-based neural vocoders. 
+  FreeGAN employs an amplitude-phase serial prediction framework, therefore eliminating the need for GAN-based training. It incorporates an amplitude prior input, a SNAKE-ConvNeXt v2 backbone, and a frequency-weighted anti-wrapping phase loss to compensate for any performance loss caused by the absence of GANs.
+  Experimental results confirm that the speech quality of FreeGAN is comparable to that of advanced GAN-based vocoders, while significantly improving training efficiency and reducing model complexity. 
+  Other explicit-phase-prediction-based neural vocoders can also work without GANs by leveraging our proposed methods. </p>
 
 <h2><p class="toc_title">Contents</p></h2>
 <div id="toc_container">
 <ul>
   <li><a href="#1">Model Architecture</a></li>
-  <li><a href="#2">Analysis-synthesis tasks on different models</a></li>
-  <li><a href="#3">Text-to-speech tasks on different models</a></li>
-  <li><a href="#4">Cross-dataset experiments</a></li>
+  <li><a href="#2">Is GAN Necessary for the FreeGAN vocoder?</a></li>
+  <li><a href="#3">GAN is Necessary for Which Types of Vocoders?</a></li>
 </ul>
 </div>
 
@@ -56,7 +57,7 @@
 <div>
   <br />
   <p style="text-align: center">
-    <img src="./fig2.png" width="1500" height="500"/>
+    <img src="./fig1.jpg" width="1500" height="500"/>
   </p>
   <p>
   <figcaption style="text-align:center;">
